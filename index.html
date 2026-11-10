@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101524">
+  <title>Moonlit Confessions — A 3D Romance Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="scene" aria-label="3D moonlit garden game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Moonlit Confessions home"><span class="brand-mark">✦</span><span>MOONLIT <b>CONFESSIONS</b></span></a>
+      <div class="top-actions"><button id="sound-toggle" class="icon-button" aria-label="Toggle sound">♫ <span>Sound</span></button><button id="help-button" class="icon-button" aria-label="Controls help">? <span>Guide</span></button></div>
+    </header>
+    <section class="quest-card" id="quest-card">
+      <div class="eyebrow"><span class="live-dot"></span> TONIGHT'S LITTLE QUEST</div>
+      <div class="quest-title" id="quest-title">Find the three wishes</div>
+      <div class="quest-subtitle" id="quest-subtitle">Look around the garden for falling petals.</div>
+      <div class="petal-track" aria-label="Wishes collected"><span class="petal-slot">✧</span><span class="petal-slot">✧</span><span class="petal-slot">✧</span></div>
+    </section>
+    <div class="location-pill"><span>☾</span> HOSHINO SHRINE <i>•</i> 11:47 PM</div>
+    <div id="interaction-hint" class="interaction-hint hidden"><span class="keycap">E</span><span id="hint-text">Talk to Mika</span></div>
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <div class="crosshair"><span></span></div>
+    <div id="dialogue" class="dialogue hidden" role="dialog" aria-modal="true">
+      <div class="portrait"><div class="portrait-art"><span class="portrait-star">✦</span><span class="portrait-flower">✿</span><div class="portrait-face"><i></i><b></b><em></em></div></div><div class="portrait-label">MIKA · 24</div></div>
+      <div class="dialogue-main"><div class="speaker">MIKA <span>✦</span></div><p id="dialogue-text"></p><div id="choices" class="choices"></div><button id="continue-button" class="continue-button hidden">Continue <span>→</span></button></div>
+      <button id="close-dialogue" class="close-dialogue" aria-label="Close dialogue">×</button>
+    </div>
+    <div id="start-screen" class="screen-cover">
+      <div class="start-card"><div class="cover-kicker"><span>✧</span> A SMALL, SOFT ADVENTURE <span>✧</span></div><h1>Moonlit<br><em>Confessions</em></h1><p>One quiet night. Three wishes.<br>And someone you’re glad you found.</p><div class="cover-meta"><span>✦ 3D ROMANCE ADVENTURE</span><span>✦ 5–10 MIN</span></div><button id="start-button" class="primary-button">Step into the garden <span>→</span></button><div class="cover-note">A gentle, non-explicit story featuring adults.</div></div>
+    </div>
+    <div id="help-screen" class="modal-screen hidden"><div class="modal-card"><button class="modal-close" aria-label="Close guide">×</button><div class="eyebrow">A QUICK GUIDE</div><h2>Take your time.</h2><p>Wander through the shrine garden and find three glowing wishes. Then come back to Mika.</p><div class="guide-controls"><div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Move around</span></div><div><kbd>E</kbd><span>Talk or collect</span></div><div><span class="touch-icon">◎</span><span>Touch joystick & action button</span></div></div><button class="primary-button guide-ok">Sounds lovely <span>→</span></button></div></div>
+    <div class="mobile-controls" id="mobile-controls"><div class="joystick" id="joystick"><div class="joy-ring"></div><div class="joy-knob" id="joy-knob"></div></div><button id="action-button" class="action-button"><span>✦</span><small>ACTION</small></button></div>
+    <div class="desktop-tip" id="desktop-tip"><kbd>WASD</kbd> move <span>·</span> <kbd>E</kbd> interact</div>
+    <div class="ending-ribbon hidden" id="ending-ribbon">A WISH SHARED UNDER THE STARS <span>✦</span></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
